@@ -42,13 +42,16 @@ private lateinit var clock: TextClock
         button = findViewById(R.id.button)
         clock = findViewById(R.id.textClock)
         button.text = getString(R.string.button)
+        button.setOnClickListener {
+            clock.visibility = View.VISIBLE
+        }
 
 
         }
-    fun show(view :View){
-        clock.visibility = View.VISIBLE
-
-    }
+//    fun show(view :View){
+//        clock.visibility = View.VISIBLE
+//
+//    }
 
     }
 
