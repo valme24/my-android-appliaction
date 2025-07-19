@@ -5,41 +5,15 @@
                                                    android:orientation="vertical"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent" android:id="@+id/linearLayout"
-                                                   android:visibility="visible">
+                                                   android:visibility="visible"
+>
 
-
-    <ImageView
-            android:src="@drawable/turtle2"
-            android:layout_width="377dp"
-            android:layout_height="398dp" android:id="@+id/imageView"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.529" app:layout_constraintVertical_bias="0.0"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:text="Name"
-            android:ems="10"
-            android:id="@+id/inpu"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.417" app:layout_constraintVertical_bias="0.604"
-            android:hint="Enter Inches"/>
-    <Button
-            android:text="@string/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.414" app:layout_constraintVertical_bias="0.699"
-            app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/result"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.912" app:layout_constraintVertical_bias="0.594"
-            app:layout_constraintTop_toTopOf="parent"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="84dp"
+            android:layout_height="111dp"
+            android:clickable="true" app:srcCompat="@drawable/turtle2" android:id="@+id/but"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:rippleColor="@color/purple_200"
+            android:background="#4CAF50" android:contentDescription="@string/text"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

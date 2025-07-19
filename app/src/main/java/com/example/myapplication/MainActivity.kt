@@ -1,22 +1,13 @@
 package com.example.myapplication
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextClock
-import android.widget.TextView
+
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.myapplication.ui.theme.MyApplicationTheme
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 //class MainActivity : ComponentActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,27 +26,19 @@ import com.example.myapplication.ui.theme.MyApplicationTheme
 //    }
 //}
 class MainActivity : ComponentActivity() {
-    private val inch = 2.54
-private lateinit var input : EditText
-private lateinit var button: Button
-private lateinit var result : TextView
-private lateinit var clock : TextClock
+private lateinit var button: FloatingActionButton
+private lateinit var view:View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity)
-        input = findViewById(R.id.inpu)
-        button = findViewById(R.id.button)
-        result = findViewById(R.id.result)
-        button.setOnClickListener{
-            if(input.text.isNotEmpty()){
-                val len = input.text.toString().toDouble()
-                val inch = len * inch
-                result.text = "Result: ${inch} inches".toString()
-            }
-            else{
-                result.text = getString(R.string.text)
-            }
+
+
+        view = findViewById(R.id.linearLayout)
+        button =  findViewById(R.id.but)
+        button.setOnClickListener {
+            view.setBackgroundColor(Color.RED)
+        }
         }
 
 
@@ -65,7 +48,7 @@ private lateinit var clock : TextClock
 //
 //    }
 
-    }
+
 
 
 //@Composable
