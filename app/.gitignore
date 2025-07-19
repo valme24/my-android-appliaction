@@ -1,1 +1,10 @@
 /build
+ .idea/.name
+        .idea/AndroidProjectSystem.xml
+        .idea/assetWizardSettings.xml
+        .idea/compiler.xml
+        .idea/gradle.xml
+        .idea/inspectionProfiles/
+        .idea/misc.xml
+        .idea/vcs.xml
+.idea/
