@@ -1,13 +1,12 @@
 package com.example.myapplication
 
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.Toast
 
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 //class MainActivity : ComponentActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,19 +25,31 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 //    }
 //}
 class MainActivity : ComponentActivity() {
-private lateinit var button: FloatingActionButton
-private lateinit var view:View
+private lateinit var radiogroup : RadioGroup
+private lateinit var radioButton: RadioButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity)
+       radiogroup = findViewById(R.id.rg)
+        radiogroup.setOnCheckedChangeListener { radiogroup,id ->
+            radioButton = findViewById(id)
+           when(id){
+              R.id.rb1 -> {
+                  Toast.makeText(this@MainActivity,"Yes Button is clicked ",Toast.LENGTH_SHORT).show()
 
-
-        view = findViewById(R.id.linearLayout)
-        button =  findViewById(R.id.but)
-        button.setOnClickListener {
-            view.setBackgroundColor(Color.RED)
+              }
+               R.id.rb2 -> {
+                   Toast.makeText(this@MainActivity,"no Button is clicked ",Toast.LENGTH_SHORT).show()
+               }
+               R.id.rb3 -> {
+                   Toast.makeText(this@MainActivity,"maybe Button is clicked ",Toast.LENGTH_SHORT).show()
+               }
+           }
         }
+
+
+
         }
 
 
