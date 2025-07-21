@@ -2,11 +2,10 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.CheckBox
 
-import android.widget.SeekBar
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.ToggleButton
 
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
@@ -28,27 +27,32 @@ import androidx.activity.enableEdgeToEdge
 //    }
 //}
 class MainActivity : ComponentActivity() {
-private lateinit var textView: TextView
-private lateinit var button : ToggleButton
+
+private lateinit var text1 : TextView
+private lateinit var  checkbox1 : CheckBox
+private lateinit var checkbox2 : CheckBox
+private lateinit var button : Button
+private lateinit var text2 : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.toggledemo)
-        button = findViewById(R.id.toggleButton)
-        textView = findViewById(R.id.tt)
-        button.setOnCheckedChangeListener {_,ischecked ->
-                if(ischecked){
+        setContentView(R.layout.checkboxdemo)
+        checkbox1 = findViewById(R.id.cb1)
+        checkbox2 = findViewById(R.id.checkBox2)
+        button = findViewById(R.id.button)
+        text1 = findViewById(R.id.tvforcheckbox)
+        text2 = findViewById(R.id.textView2)
 
-                   textView.visibility = View.VISIBLE
-                    button.text = " "
-
-                }
-            else{
-                 textView.visibility = View.INVISIBLE
-                }
-
+        button.setOnClickListener {
+            text2.visibility = View.VISIBLE
+            val b = StringBuilder()
+            b.append(checkbox1.text.toString()+"Status is " + checkbox1.isChecked + "\n")
+            b.append(checkbox2.text.toString()+"Status is " + checkbox2.isChecked + "\n")
+            text2.text = b.toString()
         }
+
+
 
     }
 

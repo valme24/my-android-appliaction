@@ -3,6 +3,9 @@
     <string name="textv">Text</string>
     <string name="text">text</string>
     <string name="togglebuttontext">Toggle</string>
+    <string name="textforcheckboxquextion">"Which Language you like for programming  "</string>
+    <string name="checkboxtext2">java</string>
+    <string name="checkboxtext1">python</string>
 
 
 </resources>
