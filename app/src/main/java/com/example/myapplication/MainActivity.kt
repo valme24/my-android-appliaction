@@ -1,9 +1,12 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.widget.RadioButton
-import android.widget.RadioGroup
+import android.view.View
+
+import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
+import android.widget.ToggleButton
 
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
@@ -25,39 +28,37 @@ import androidx.activity.enableEdgeToEdge
 //    }
 //}
 class MainActivity : ComponentActivity() {
-private lateinit var radiogroup : RadioGroup
-private lateinit var radioButton: RadioButton
+private lateinit var textView: TextView
+private lateinit var button : ToggleButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity)
-       radiogroup = findViewById(R.id.rg)
-        radiogroup.setOnCheckedChangeListener { radiogroup,id ->
-            radioButton = findViewById(id)
-           when(id){
-              R.id.rb1 -> {
-                  Toast.makeText(this@MainActivity,"Yes Button is clicked ",Toast.LENGTH_SHORT).show()
+        setContentView(R.layout.toggledemo)
+        button = findViewById(R.id.toggleButton)
+        textView = findViewById(R.id.tt)
+        button.setOnCheckedChangeListener {_,ischecked ->
+                if(ischecked){
 
-              }
-               R.id.rb2 -> {
-                   Toast.makeText(this@MainActivity,"no Button is clicked ",Toast.LENGTH_SHORT).show()
-               }
-               R.id.rb3 -> {
-                   Toast.makeText(this@MainActivity,"maybe Button is clicked ",Toast.LENGTH_SHORT).show()
-               }
-           }
-        }
+                   textView.visibility = View.VISIBLE
+                    button.text = " "
 
-
+                }
+            else{
+                 textView.visibility = View.INVISIBLE
+                }
 
         }
 
+    }
 
-        }
-//    fun show(view :View){
-//        clock.visibility = View.VISIBLE
-//
-//    }
+}
+
+
+
+
+
+
 
 
 

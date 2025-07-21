@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="rbt">Yes</string>
-    <string name="radio_button_text2">no</string>
-    <string name="radio_button_text3">maybe</string>
-    <string name="question">Do you like programming </string>
+    <string name="textv">Text</string>
+    <string name="text">text</string>
+    <string name="togglebuttontext">Toggle</string>
 
 
 </resources>
