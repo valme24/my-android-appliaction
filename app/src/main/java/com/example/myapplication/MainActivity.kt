@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.CheckBox
 
 import android.widget.TextView
+import android.widget.Toast
 
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
@@ -28,35 +29,46 @@ import androidx.activity.enableEdgeToEdge
 //}
 class MainActivity : ComponentActivity() {
 
-private lateinit var text1 : TextView
-private lateinit var  checkbox1 : CheckBox
-private lateinit var checkbox2 : CheckBox
-private lateinit var button : Button
-private lateinit var text2 : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.checkboxdemo)
-        checkbox1 = findViewById(R.id.cb1)
-        checkbox2 = findViewById(R.id.checkBox2)
-        button = findViewById(R.id.button)
-        text1 = findViewById(R.id.tvforcheckbox)
-        text2 = findViewById(R.id.textView2)
 
-        button.setOnClickListener {
-            text2.visibility = View.VISIBLE
-            val b = StringBuilder()
-            b.append(checkbox1.text.toString()+"Status is " + checkbox1.isChecked + "\n")
-            b.append(checkbox2.text.toString()+"Status is " + checkbox2.isChecked + "\n")
-            text2.text = b.toString()
+
         }
 
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this@MainActivity,"on resume ", Toast.LENGTH_SHORT).show()
+
+    }
+    override  fun onStart(){
+        super.onStart()
+        Toast.makeText(this@MainActivity,"on Start ", Toast.LENGTH_SHORT).show()
+
+
+    }
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this@MainActivity,"on puase ", Toast.LENGTH_SHORT).show()
+    }
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this@MainActivity,"on Stop ", Toast.LENGTH_SHORT).show()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Toast.makeText(this@MainActivity,"on Destroy ", Toast.LENGTH_SHORT).show()
+    }
+    override fun onRestart() {
+        super.onRestart()
+        Toast.makeText(this@MainActivity,"on restartgit  ", Toast.LENGTH_SHORT).show()
+    }
 
 
     }
 
-}
 
 
 
